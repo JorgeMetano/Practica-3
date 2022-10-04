@@ -1,0 +1,38 @@
+!
+!   GAMESS Calculation input file
+!   Molecula de prueba JIMB
+!
+ $CONTRL SCFTYP=RHF MAXIT=200 RUNTYP=OPTIMIZE
+         COORD=UNIQUE MULT=1 
+         ICHARG=0  
+         DFTTYP=B3LYP
+         MOLPLT=.FALSE. PLTORB=.FALSE.  $END
+ $SYSTEM TIMLIM=2879 MWORDS=250  $END
+
+ $FORCE METHOD=SEMINUM NVIB=2 $END 
+ $STATPT OPTTOL=0.0005 NSTEP=999 $END
+ $STATPT IHREP=0 HSSEND=.TRUE.  $END
+
+ $DFT    METHOD=GRID  NLEB=590  $END
+
+ $BASIS  GBASIS=N31 NGAUSS=6
+         NDFUNC=1   NPFUNC=0  $END
+
+ $SCF    DIRSCF=.T. $END
+ $GUESS  GUESS=HUCKEL  $END
+
+ $DATA
+   Molecula de prueba JIMB
+  C1
+O     8.0    -0.76247     1.23977     0.13424
+C     6.0    -0.90019     0.03208    -0.03061
+C     6.0     0.23081    -0.92701    -0.08556
+C     6.0     1.50413    -0.50148    -0.03354
+H     1.0    -1.89361    -0.42460    -0.15087
+H     1.0    -0.01568    -1.97476    -0.17287
+H     1.0     1.74353     0.55234     0.05059
+H     1.0     2.32753    -1.20221    -0.07470
+ $END
+
+
+! Customizations after this line are persisted when using Do More Calculations
